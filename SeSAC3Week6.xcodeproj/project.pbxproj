@@ -58,9 +58,10 @@
 		387AF2522A930A180055C29C /* SeSAC3Week6 */ = {
 			isa = PBXGroup;
 			children = (
-				387AF2672A930A400055C29C /* Application */,
-				387AF25C2A930A190055C29C /* Assets.xcassets */,
+				387AF26A2A930AA10055C29C /* .gitignore */,
 				387AF2612A930A190055C29C /* Info.plist */,
+				387AF25C2A930A190055C29C /* Assets.xcassets */,
+				387AF2672A930A400055C29C /* Application */,
 				387AF2682A930A4A0055C29C /* Storyboard */,
 				387AF2692A930A560055C29C /* View */,
 			);
@@ -89,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				387AF2572A930A180055C29C /* ViewController.swift */,
-				387AF26A2A930AA10055C29C /* .gitignore */,
 			);
 			path = View;
 			sourceTree = "<group>";
