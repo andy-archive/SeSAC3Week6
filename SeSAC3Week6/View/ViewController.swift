@@ -73,9 +73,21 @@ class ViewController: UIViewController {
         passwordTextField.backgroundColor = .brown
     }
     
+    // 스토리보드 없이 연결하기
+    @objc func signButtonClicked() {
+//        let vc = SnapViewController() // 뷰컨에 대한 인스턴스를 만든 것
+        let vc = TextViewController()
+        present(vc, animated: true)
+    }
+    
     // MARK: signButton
     func setLayoutAnchor() {
-        signButton.backgroundColor = .blue
+        signButton.backgroundColor = .systemGray
+        signButton.setTitle("CLICK", for: .normal)
+        signButton.setTitle("YEAH", for: .highlighted)
+        
+        // 코드로 Action 연결
+        signButton.addTarget(self, action: #selector(signButtonClicked), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             signButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
