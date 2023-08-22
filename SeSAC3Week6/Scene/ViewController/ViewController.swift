@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 // 기존에 하던 AutoLayout의 방식:
 // -> 객체를 얹고, 레이아웃을 잡고, 아웃렛을 연결하고, 속성을 조절하고
@@ -29,15 +30,23 @@ class ViewController: UIViewController {
     let passwordTextField = UITextField()
     let signButton = UIButton()
     
+    let exampleOneButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemYellow
+        button.setTitle("Example One", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureView()
         setLayoutAnchor()
+        setButton()
     }
     
     func configureView() {
-        
         // MARK: addSubView & translatesAutoresizingMaskIntoConstraints
         // 루트 뷰에 인스턴스 추가 및 AutoResizing에 대한 기본값(true)을 false로 변경
         [emailTextField, passwordTextField, signButton].forEach {
@@ -47,11 +56,11 @@ class ViewController: UIViewController {
         
         // MARK: emailTextField
         // (1) frame 기반으로 AutoLayout 잡기 (좌측 상단에서부터 적용)
-        emailTextField.frame = CGRect(x: 50, y: 80, width: UIScreen.main.bounds.width - 100, height: 50)
-        emailTextField.backgroundColor = .lightGray
-        emailTextField.isSecureTextEntry = true
-        emailTextField.keyboardType = .numberPad
-        emailTextField.placeholder = "닉네임을 입력해주세요."
+//        emailTextField.frame = CGRect(x: 50, y: 80, width: UIScreen.main.bounds.width - 100, height: 50)
+//        emailTextField.backgroundColor = .lightGray
+//        emailTextField.isSecureTextEntry = true
+//        emailTextField.keyboardType = .numberPad
+//        emailTextField.placeholder = "닉네임을 입력해주세요."
         
         // MARK: passwordTextField
         // (2) NSLayoutConstraints으로 레이아웃을 잡고, 이를 활성화하기
@@ -70,6 +79,8 @@ class ViewController: UIViewController {
         
         view.addConstraints([leading, trailing, height, top])
         
+        passwordTextField.text = "NSLayoutConstraint"
+        passwordTextField.textAlignment = .center
         passwordTextField.backgroundColor = .brown
     }
     
@@ -81,10 +92,15 @@ class ViewController: UIViewController {
         present(vc, animated: true)
     }
     
+    @objc func exampleOneButtonClicked() {
+        let vc = ExampleOneViewController()
+        present(vc, animated: true)
+    }
+    
     // MARK: signButton
     func setLayoutAnchor() {
         signButton.backgroundColor = .systemGray
-        signButton.setTitle("CLICK", for: .normal)
+        signButton.setTitle("GET LOCATION", for: .normal)
         signButton.setTitle("YEAH", for: .highlighted)
         
         // 코드로 Action 연결
@@ -92,10 +108,23 @@ class ViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             signButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             signButton.widthAnchor.constraint(equalToConstant: 300),
             signButton.heightAnchor.constraint(equalToConstant: 50),
-            signButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor) // Safe Area를 고려함
+//            signButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor) // Safe Area를 고려함
         ])
+    }
+    
+    func setButton() {
+        exampleOneButton.addTarget(self, action: #selector(exampleOneButtonClicked), for: .touchUpInside)
+        
+        [exampleOneButton].forEach { view.addSubview($0) }
+        
+        exampleOneButton.snp.makeConstraints { make in
+            make.top.equalTo(signButton.snp.bottom).offset(20)
+            make.centerX.equalTo(view)
+            make.height.equalTo(50)
+        }
     }
 
 }
