@@ -10,6 +10,7 @@
 		38288E472A94463F00AED829 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 38288E462A94463F00AED829 /* SnapKit */; };
 		38288E4A2A94468000AED829 /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38288E492A94468000AED829 /* SnapViewController.swift */; };
 		38288E4E2A945CFE00AED829 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38288E4D2A945CFE00AED829 /* TextViewController.swift */; };
+		38288E502A94792B00AED829 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38288E4F2A94792B00AED829 /* LocationViewController.swift */; };
 		387AF2542A930A180055C29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387AF2532A930A180055C29C /* AppDelegate.swift */; };
 		387AF2562A930A180055C29C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387AF2552A930A180055C29C /* SceneDelegate.swift */; };
 		387AF2582A930A180055C29C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387AF2572A930A180055C29C /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		38288E492A94468000AED829 /* SnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapViewController.swift; sourceTree = "<group>"; };
 		38288E4D2A945CFE00AED829 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		38288E4F2A94792B00AED829 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		387AF2502A930A180055C29C /* SeSAC3Week6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC3Week6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		387AF2532A930A180055C29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		387AF2552A930A180055C29C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			children = (
 				38288E492A94468000AED829 /* SnapViewController.swift */,
 				38288E4D2A945CFE00AED829 /* TextViewController.swift */,
+				38288E4F2A94792B00AED829 /* LocationViewController.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				38288E4E2A945CFE00AED829 /* TextViewController.swift in Sources */,
 				38288E4A2A94468000AED829 /* SnapViewController.swift in Sources */,
 				387AF2582A930A180055C29C /* ViewController.swift in Sources */,
+				38288E502A94792B00AED829 /* LocationViewController.swift in Sources */,
 				387AF2542A930A180055C29C /* AppDelegate.swift in Sources */,
 				387AF2562A930A180055C29C /* SceneDelegate.swift in Sources */,
 			);

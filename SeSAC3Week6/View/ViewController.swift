@@ -76,7 +76,8 @@ class ViewController: UIViewController {
     // 스토리보드 없이 연결하기
     @objc func signButtonClicked() {
 //        let vc = SnapViewController() // 뷰컨에 대한 인스턴스를 만든 것
-        let vc = TextViewController()
+//        let vc = TextViewController()
+        let vc = LocationViewController()
         present(vc, animated: true)
     }
     
