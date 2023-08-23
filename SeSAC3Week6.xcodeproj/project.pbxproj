@@ -52,11 +52,12 @@
 		38288E4C2A945CEE00AED829 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				387AF2572A930A180055C29C /* ViewController.swift */,
 				38288E542A949F9200AED829 /* ExampleOneViewController.swift */,
+				38288E562A94ADF200AED829 /* ExampleTwoViewController.swift */,
+				38288E4F2A94792B00AED829 /* LocationViewController.swift */,
 				38288E492A94468000AED829 /* SnapViewController.swift */,
 				38288E4D2A945CFE00AED829 /* TextViewController.swift */,
-				38288E4F2A94792B00AED829 /* LocationViewController.swift */,
+				387AF2572A930A180055C29C /* ViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -350,6 +351,7 @@
 				DEVELOPMENT_TEAM = 3UNP2C529F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC3Week6/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 날씨에 대한 정보를 가지고 오기 위해 위치 정보가 필요합니다";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -382,6 +384,7 @@
 				DEVELOPMENT_TEAM = 3UNP2C529F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC3Week6/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 날씨에 대한 정보를 가지고 오기 위해 위치 정보가 필요합니다";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
