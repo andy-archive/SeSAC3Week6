@@ -33,7 +33,15 @@ class ViewController: UIViewController {
     let exampleOneButton = {
         let button = UIButton()
         button.backgroundColor = .systemYellow
-        button.setTitle("Example One", for: .normal)
+        button.setTitle("Example One - Layout", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        return button
+    }()
+    
+    let exampleTwoButton = {
+        let button = UIButton()
+        button.backgroundColor = .cyan
+        button.setTitle("Example Two - Kakao Talk Profile", for: .normal)
         button.setTitleColor(.black, for: .normal)
         return button
     }()
@@ -89,11 +97,18 @@ class ViewController: UIViewController {
 //        let vc = SnapViewController() // 뷰컨에 대한 인스턴스를 만든 것
 //        let vc = TextViewController()
         let vc = LocationViewController()
-        present(vc, animated: true)
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true)
     }
     
     @objc func exampleOneButtonClicked() {
         let vc = ExampleOneViewController()
+        present(vc, animated: true)
+    }
+    
+    @objc func exampleTwoButtonClicked() {
+        let vc = ExampleTwoViewController()
+        vc.modalPresentationStyle = .pageSheet
         present(vc, animated: true)
     }
     
@@ -117,13 +132,20 @@ class ViewController: UIViewController {
     
     func setButton() {
         exampleOneButton.addTarget(self, action: #selector(exampleOneButtonClicked), for: .touchUpInside)
+        exampleTwoButton.addTarget(self, action: #selector(exampleTwoButtonClicked), for: .touchUpInside)
         
-        [exampleOneButton].forEach { view.addSubview($0) }
+        [exampleOneButton, exampleTwoButton].forEach { view.addSubview($0) }
         
         exampleOneButton.snp.makeConstraints { make in
             make.top.equalTo(signButton.snp.bottom).offset(20)
             make.centerX.equalTo(view)
-            make.height.equalTo(50)
+            make.height.equalTo(40)
+        }
+        
+        exampleTwoButton.snp.makeConstraints { make in
+            make.top.equalTo(exampleOneButton.snp.bottom).offset(20)
+            make.centerX.equalTo(view)
+            make.height.equalTo(40)
         }
     }
 
