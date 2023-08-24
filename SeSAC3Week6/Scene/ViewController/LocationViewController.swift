@@ -21,11 +21,13 @@ class LocationViewController: UIViewController {
     let parkButton = UIButton()
     let amusementButton = UIButton()
     
+    let globalRandomNumber = Int.random(in: 1...100)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-
+    
         configureMapView()
         configureLocationView()
         
@@ -36,6 +38,9 @@ class LocationViewController: UIViewController {
     @objc func parkButtonClicked() {
         print(#function)
         setAnonotations(type: 1)
+        
+        let localRandomNumber = Int.random(in: 1...100)
+        print(globalRandomNumber, localRandomNumber) // 스코프에 따라 변수가 달라진다
     }
     
     func setAnonotations(type: Int) {
@@ -54,6 +59,7 @@ class LocationViewController: UIViewController {
         if type == 0 {
             mapView.addAnnotations([annotation1, annotation2])
         } else if type == 1{
+            mapView.removeAnnotation(annotation1) // 동작하지 않음 -> 지역변수와 전역변수의 값이 다르기 때문
             mapView.removeAnnotations(mapView.annotations)
             mapView.addAnnotations([annotation2, annotation3, annotation4])
         }
