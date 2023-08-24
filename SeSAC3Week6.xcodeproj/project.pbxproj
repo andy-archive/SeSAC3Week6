@@ -20,10 +20,14 @@
 		387AF2602A930A190055C29C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387AF25E2A930A190055C29C /* LaunchScreen.storyboard */; };
 		387AF26B2A930AA10055C29C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 387AF26A2A930AA10055C29C /* .gitignore */; };
 		38CCBB8F2A96F127006D4779 /* GenericsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCBB8E2A96F127006D4779 /* GenericsViewController.swift */; };
-		38CCBB912A96F157006D4779 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCBB902A96F157006D4779 /* Extension+UIViewController.swift */; };
 		38CCBB942A971CE2006D4779 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCBB932A971CE2006D4779 /* CustomViewController.swift */; };
 		38CCBB962A971E98006D4779 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCBB952A971E98006D4779 /* BlackRadiusTextField.swift */; };
 		38CCBB982A972A26006D4779 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCBB972A972A26006D4779 /* CustomTableViewController.swift */; };
+		38CCBBA22A97783F006D4779 /* ExampleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCBBA12A97783F006D4779 /* ExampleButton.swift */; };
+		38CCBBA42A977EA9006D4779 /* MovieMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCBBA32A977EA9006D4779 /* MovieMainViewController.swift */; };
+		38CCBBA62A9782EF006D4779 /* MovieCategoryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCBBA52A9782EF006D4779 /* MovieCategoryLabel.swift */; };
+		38CCBBAE2A97AA25006D4779 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCBBAD2A97AA25006D4779 /* UIImage+.swift */; };
+		38CCBBB02A97AA59006D4779 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCBBAF2A97AA59006D4779 /* UIViewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,10 +45,14 @@
 		387AF2612A930A190055C29C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		387AF26A2A930AA10055C29C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		38CCBB8E2A96F127006D4779 /* GenericsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericsViewController.swift; sourceTree = "<group>"; };
-		38CCBB902A96F157006D4779 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		38CCBB932A971CE2006D4779 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		38CCBB952A971E98006D4779 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
 		38CCBB972A972A26006D4779 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		38CCBBA12A97783F006D4779 /* ExampleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleButton.swift; sourceTree = "<group>"; };
+		38CCBBA32A977EA9006D4779 /* MovieMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieMainViewController.swift; sourceTree = "<group>"; };
+		38CCBBA52A9782EF006D4779 /* MovieCategoryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCategoryLabel.swift; sourceTree = "<group>"; };
+		38CCBBAD2A97AA25006D4779 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		38CCBBAF2A97AA59006D4779 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,7 @@
 				38288E492A94468000AED829 /* SnapViewController.swift */,
 				38288E4D2A945CFE00AED829 /* TextViewController.swift */,
 				387AF2572A930A180055C29C /* ViewController.swift */,
+				38CCBBA32A977EA9006D4779 /* MovieMainViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -100,6 +109,7 @@
 		387AF2522A930A180055C29C /* SeSAC3Week6 */ = {
 			isa = PBXGroup;
 			children = (
+				38CCBBA02A97773B006D4779 /* Extensions */,
 				387AF26A2A930AA10055C29C /* .gitignore */,
 				387AF2612A930A190055C29C /* Info.plist */,
 				387AF25C2A930A190055C29C /* Assets.xcassets */,
@@ -132,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				38CCBB8E2A96F127006D4779 /* GenericsViewController.swift */,
-				38CCBB902A96F157006D4779 /* Extension+UIViewController.swift */,
 			);
 			path = Generics;
 			sourceTree = "<group>";
@@ -141,8 +150,35 @@
 			isa = PBXGroup;
 			children = (
 				38CCBB932A971CE2006D4779 /* CustomViewController.swift */,
-				38CCBB952A971E98006D4779 /* BlackRadiusTextField.swift */,
 				38CCBB972A972A26006D4779 /* CustomTableViewController.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		38CCBBA02A97773B006D4779 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				38CCBBAB2A97A9C6006D4779 /* UIView+ */,
+				38CCBBAC2A97A9DF006D4779 /* CustomView */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		38CCBBAB2A97A9C6006D4779 /* UIView+ */ = {
+			isa = PBXGroup;
+			children = (
+				38CCBBAD2A97AA25006D4779 /* UIImage+.swift */,
+				38CCBBAF2A97AA59006D4779 /* UIViewController+.swift */,
+			);
+			path = "UIView+";
+			sourceTree = "<group>";
+		};
+		38CCBBAC2A97A9DF006D4779 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				38CCBB952A971E98006D4779 /* BlackRadiusTextField.swift */,
+				38CCBBA12A97783F006D4779 /* ExampleButton.swift */,
+				38CCBBA52A9782EF006D4779 /* MovieCategoryLabel.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -224,9 +260,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38CCBBA22A97783F006D4779 /* ExampleButton.swift in Sources */,
+				38CCBBA62A9782EF006D4779 /* MovieCategoryLabel.swift in Sources */,
 				38288E4E2A945CFE00AED829 /* TextViewController.swift in Sources */,
 				38CCBB8F2A96F127006D4779 /* GenericsViewController.swift in Sources */,
 				38288E4A2A94468000AED829 /* SnapViewController.swift in Sources */,
+				38CCBBA42A977EA9006D4779 /* MovieMainViewController.swift in Sources */,
 				38CCBB962A971E98006D4779 /* BlackRadiusTextField.swift in Sources */,
 				38288E552A949F9200AED829 /* ExampleOneViewController.swift in Sources */,
 				38CCBB982A972A26006D4779 /* CustomTableViewController.swift in Sources */,
@@ -235,7 +274,8 @@
 				387AF2542A930A180055C29C /* AppDelegate.swift in Sources */,
 				38CCBB942A971CE2006D4779 /* CustomViewController.swift in Sources */,
 				38288E572A94ADF200AED829 /* ExampleTwoViewController.swift in Sources */,
-				38CCBB912A96F157006D4779 /* Extension+UIViewController.swift in Sources */,
+				38CCBBB02A97AA59006D4779 /* UIViewController+.swift in Sources */,
+				38CCBBAE2A97AA25006D4779 /* UIImage+.swift in Sources */,
 				387AF2562A930A180055C29C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

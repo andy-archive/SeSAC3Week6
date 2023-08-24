@@ -48,6 +48,4 @@ class Mobile: ExampleProtocol {
     required init(name: String) {
 //        <#code#>
     }
-    
-    
 }

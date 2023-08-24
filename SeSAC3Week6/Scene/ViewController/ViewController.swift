@@ -23,7 +23,7 @@ import SnapKit
 //      1. .isActive = true  (쓰지 않을 시 경고 메시지 Result of 'NSLayoutConstraint' initializer is unused)
 //      2. addConstraints
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     // 클래스의 인스턴스 생성
     let emailTextField = UITextField()
@@ -31,18 +31,20 @@ class ViewController: UIViewController {
     let signButton = UIButton()
     
     let exampleOneButton = {
-        let button = UIButton()
-        button.backgroundColor = .systemYellow
+        let button = ExampleButton()
         button.setTitle("Example One - Layout", for: .normal)
-        button.setTitleColor(.black, for: .normal)
         return button
     }()
     
     let exampleTwoButton = {
-        let button = UIButton()
-        button.backgroundColor = .cyan
+        let button = ExampleButton()
         button.setTitle("Example Two - Kakao Talk Profile", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        return button
+    }()
+    
+    let movieButton = {
+        let button = ExampleButton()
+        button.setTitle("Go to Movie Scene", for: .normal)
         return button
     }()
     
@@ -55,6 +57,9 @@ class ViewController: UIViewController {
     }
     
     func configureView() {
+        
+        view.backgroundColor = .white
+        
         // MARK: addSubView & translatesAutoresizingMaskIntoConstraints
         // 루트 뷰에 인스턴스 추가 및 AutoResizing에 대한 기본값(true)을 false로 변경
         [emailTextField, passwordTextField, signButton].forEach {
@@ -115,6 +120,12 @@ class ViewController: UIViewController {
         present(vc, animated: true)
     }
     
+    @objc func movieButtonClicked() {
+        let vc = MovieMainViewController()
+        vc.modalTransitionStyle = .flipHorizontal
+        present(vc, animated: true)
+    }
+    
     // MARK: signButton
     func setLayoutAnchor() {
         signButton.backgroundColor = .systemGray
@@ -135,18 +146,25 @@ class ViewController: UIViewController {
     
     func setButton() {
         exampleOneButton.addTarget(self, action: #selector(exampleOneButtonClicked), for: .touchUpInside)
-        exampleTwoButton.addTarget(self, action: #selector(exampleTwoButtonClicked), for: .touchUpInside)
-        
-        [exampleOneButton, exampleTwoButton].forEach { view.addSubview($0) }
-        
+        view.addSubview(exampleOneButton)
         exampleOneButton.snp.makeConstraints { make in
             make.top.equalTo(signButton.snp.bottom).offset(20)
             make.centerX.equalTo(view)
             make.height.equalTo(40)
         }
         
+        exampleTwoButton.addTarget(self, action: #selector(exampleTwoButtonClicked), for: .touchUpInside)
+        view.addSubview(exampleTwoButton)
         exampleTwoButton.snp.makeConstraints { make in
             make.top.equalTo(exampleOneButton.snp.bottom).offset(20)
+            make.centerX.equalTo(view)
+            make.height.equalTo(40)
+        }
+        
+        movieButton.addTarget(self, action: #selector(movieButtonClicked), for: .touchUpInside)
+        view.addSubview(movieButton)
+        movieButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
             make.centerX.equalTo(view)
             make.height.equalTo(40)
         }
