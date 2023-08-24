@@ -103,10 +103,11 @@ final class ViewController: UIViewController {
 //        let vc = TextViewController()
 //        let vc = LocationViewController()
 //        let nav = UINavigationController(rootViewController: vc)
-//        present(nav, animated: true)
+        let vc = GenericsViewController()
+        present(vc, animated: true)
         
         // 클래스 자체를 넘겨 주기
-        transition(viewController: GenericsViewController.self , storyboard: "Main", style: .presentFullNavigation)
+//        transition(viewController: GenericsViewController.self , storyboard: "Main", style: .presentFullNavigation)
     }
     
     @objc func exampleOneButtonClicked() {
