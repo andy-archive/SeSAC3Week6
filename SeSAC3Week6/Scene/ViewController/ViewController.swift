@@ -95,10 +95,13 @@ class ViewController: UIViewController {
     // 스토리보드 없이 연결하기
     @objc func signButtonClicked() {
 //        let vc = SnapViewController() // 뷰컨에 대한 인스턴스를 만든 것
-        let vc = TextViewController()
+//        let vc = TextViewController()
 //        let vc = LocationViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        present(nav, animated: true)
+//        let nav = UINavigationController(rootViewController: vc)
+//        present(nav, animated: true)
+        
+        // 클래스 자체를 넘겨 주기
+        transition(viewController: GenericsViewController.self , storyboard: "Main", style: .presentFullNavigation)
     }
     
     @objc func exampleOneButtonClicked() {
@@ -115,7 +118,7 @@ class ViewController: UIViewController {
     // MARK: signButton
     func setLayoutAnchor() {
         signButton.backgroundColor = .systemGray
-        signButton.setTitle("GET LOCATION", for: .normal)
+        signButton.setTitle("TRANSITION VIEW", for: .normal)
         signButton.setTitle("YEAH", for: .highlighted)
         
         // 코드로 Action 연결
