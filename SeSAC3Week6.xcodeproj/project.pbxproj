@@ -14,6 +14,7 @@
 		38288E552A949F9200AED829 /* ExampleOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38288E542A949F9200AED829 /* ExampleOneViewController.swift */; };
 		38288E572A94ADF200AED829 /* ExampleTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38288E562A94ADF200AED829 /* ExampleTwoViewController.swift */; };
 		384721B52A982B1000FA1F9C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384721B42A982B1000FA1F9C /* CustomTableViewCell.swift */; };
+		384721B82A9840D600FA1F9C /* PosterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384721B72A9840D600FA1F9C /* PosterImageView.swift */; };
 		387AF2542A930A180055C29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387AF2532A930A180055C29C /* AppDelegate.swift */; };
 		387AF2562A930A180055C29C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387AF2552A930A180055C29C /* SceneDelegate.swift */; };
 		387AF2582A930A180055C29C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387AF2572A930A180055C29C /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 		38288E542A949F9200AED829 /* ExampleOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleOneViewController.swift; sourceTree = "<group>"; };
 		38288E562A94ADF200AED829 /* ExampleTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTwoViewController.swift; sourceTree = "<group>"; };
 		384721B42A982B1000FA1F9C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		384721B72A9840D600FA1F9C /* PosterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageView.swift; sourceTree = "<group>"; };
 		387AF2502A930A180055C29C /* SeSAC3Week6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC3Week6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		387AF2532A930A180055C29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		387AF2552A930A180055C29C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				38CCBB952A971E98006D4779 /* BlackRadiusTextField.swift */,
 				38CCBBA12A97783F006D4779 /* ExampleButton.swift */,
 				38CCBBA52A9782EF006D4779 /* MovieCategoryLabel.swift */,
+				384721B72A9840D600FA1F9C /* PosterImageView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			files = (
 				384721B52A982B1000FA1F9C /* CustomTableViewCell.swift in Sources */,
 				38CCBBA22A97783F006D4779 /* ExampleButton.swift in Sources */,
+				384721B82A9840D600FA1F9C /* PosterImageView.swift in Sources */,
 				38CCBBA62A9782EF006D4779 /* MovieCategoryLabel.swift in Sources */,
 				38288E4E2A945CFE00AED829 /* TextViewController.swift in Sources */,
 				38CCBB8F2A96F127006D4779 /* GenericsViewController.swift in Sources */,

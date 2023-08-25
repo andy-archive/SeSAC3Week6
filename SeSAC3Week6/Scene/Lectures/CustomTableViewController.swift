@@ -13,11 +13,22 @@ struct Sample {
     var isExpand: Bool
 }
 
-class CustomTableViewController: UIViewController {
+final class CustomTableViewController: UIViewController {
 
-    let tableView = {
+    // 클로저 다음에 viewDidLoad가 실행 된다
+    // CustomTableViewController의 인스턴스 생성 직전에 클로저 구문이 우선 실행
+    lazy var tableView = {
         let view = UITableView()
         view.rowHeight = UITableView.automaticDimension // Automatic Dimension 빼먹지 말기
+        // self -> 자기 자신의 인스턴스
+        view.delegate = self // delegate 프로토콜 연결
+        view.dataSource = self // datasource 프로토콜 연결
+        view.register(CustomTableViewCell.self, forCellReuseIdentifier: "customCell") // UINib -> Xib
+        return view
+    }()
+    
+    let imageView = {
+        let view = PosterImageView(frame: .zero)
         return view
     }()
     
@@ -31,21 +42,22 @@ class CustomTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        designUI()
+        view.backgroundColor = .white
+        configure()
     }
     
-    func designUI() {
-        view.backgroundColor = .white
+    func configure() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
-        tableView.delegate = self // delegate 프로토콜 연결
-        tableView.dataSource = self // datasource 프로토콜 연결
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "customCell") // UINib -> Xib
+        view.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.size.equalTo(200)
+            make.center.equalTo(view)
+        }
     }
-
 }
 
 //MARK: UITableView
@@ -58,19 +70,19 @@ extension CustomTableViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print(#function)
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell")!
-        cell.textLabel?.text = "Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell Test Cell "
-        cell.textLabel?.text = list[indexPath.row].text
-        cell.textLabel?.numberOfLines = list[indexPath.row].isExpand ? 0 : 2
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as? CustomTableViewCell else { return UITableViewCell() }
+        cell.label.text = list[indexPath.row].text
+        cell.label.numberOfLines = list[indexPath.row].isExpand ? 0 : 2
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        isExpand.toggle()
-        list[indexPath.row].isExpand.toggle() // Boolean 변환
-//        tableView.reloadData() // 뷰 전체 갱신
         
+//        isExpand.toggle()
+        list[indexPath.row].isExpand.toggle() // Boolean
+        
+//        tableView.reloadData() // 뷰 전체 갱신
         tableView.reloadRows(at: [indexPath], with: .automatic)
 //        tableView.reloadRows(at: [indexPath, IndexPath(row: 3, section: 0)], with: .middle) // 특정 셀을 같이 하는 게 가능하다
     }

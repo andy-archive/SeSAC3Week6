@@ -44,8 +44,8 @@ class GenericsViewController: UIViewController {
         /// 타입이 달라서 사용 불가능
 //        sumInt(a: 3.5, b: 2.5)
         
-        sum(a: 3, b: 4)
-        sum(a: 2.5, b: 9.1)
+//        sum(a: 3, b: 4)
+//        sum(a: 2.5, b: 9.1)
     }
     
 }
