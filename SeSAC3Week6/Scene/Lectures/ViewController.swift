@@ -45,6 +45,14 @@ final class ViewController: UIViewController {
     let movieButton = {
         let button = ExampleButton()
         button.setTitle("Go to Movie Scene", for: .normal)
+        button.backgroundColor = .systemRed
+        return button
+    }()
+    
+    let pageButton = {
+        let button = ExampleButton()
+        button.setTitle("PageViewController", for: .normal)
+        button.backgroundColor = .systemGreen
         return button
     }()
     
@@ -69,20 +77,19 @@ final class ViewController: UIViewController {
         
         // MARK: emailTextField
         // (1) frame 기반으로 AutoLayout 잡기 (좌측 상단에서부터 적용)
-//        emailTextField.frame = CGRect(x: 50, y: 80, width: UIScreen.main.bounds.width - 100, height: 50)
-//        emailTextField.backgroundColor = .lightGray
-//        emailTextField.isSecureTextEntry = true
-//        emailTextField.keyboardType = .numberPad
-//        emailTextField.placeholder = "닉네임을 입력해주세요."
+        // emailTextField.frame = CGRect(x: 50, y: 80, width: UIScreen.main.bounds.width - 100, height: 50)
+        // emailTextField.backgroundColor = .lightGray
+        // emailTextField.isSecureTextEntry = true
+        // emailTextField.keyboardType = .numberPad
+        // emailTextField.placeholder = "닉네임을 입력해주세요."
         
         // MARK: passwordTextField
         // (2) NSLayoutConstraints으로 레이아웃을 잡고, 이를 활성화하기
-        
         // (2-a) .isActive = true 방식
-//        NSLayoutConstraint(item: passwordTextField, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1, constant: 50).isActive = true // 좌측에서는 우측으로(양수)
-//        NSLayoutConstraint(item: passwordTextField, attribute: .trailing, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1, constant: -50).isActive = true // 우측에서는 좌측으로(음수)
-//        NSLayoutConstraint(item: passwordTextField, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1, constant: 50).isActive = true
-//        NSLayoutConstraint(item: passwordTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 60).isActive = true
+        // NSLayoutConstraint(item: passwordTextField, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1, constant: 50).isActive = true // 좌측에서는 우측으로(양수)
+        // NSLayoutConstraint(item: passwordTextField, attribute: .trailing, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1, constant: -50).isActive = true // 우측에서는 좌측으로(음수)
+        // NSLayoutConstraint(item: passwordTextField, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1, constant: 50).isActive = true
+        // NSLayoutConstraint(item: passwordTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 60).isActive = true
         
         // (2-b) addConstraints 방식
         let leading = NSLayoutConstraint(item: passwordTextField, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1, constant: 50)
@@ -99,15 +106,15 @@ final class ViewController: UIViewController {
     
     // 스토리보드 없이 연결하기
     @objc func signButtonClicked() {
-//        let vc = SnapViewController() // 뷰컨에 대한 인스턴스를 만든 것
-//        let vc = TextViewController()
-//        let vc = LocationViewController()
-//        let nav = UINavigationController(rootViewController: vc)
+        // let vc = SnapViewController() // 뷰컨에 대한 인스턴스를 만든 것
+        // let vc = TextViewController()
+        // let vc = LocationViewController()
+        // let nav = UINavigationController(rootViewController: vc)
         let vc = GenericsViewController()
         present(vc, animated: true)
         
         // 클래스 자체를 넘겨 주기
-//        transition(viewController: GenericsViewController.self , storyboard: "Main", style: .presentFullNavigation)
+        // transition(viewController: GenericsViewController.self , storyboard: "Main", style: .presentFullNavigation)
     }
     
     @objc func exampleOneButtonClicked() {
@@ -124,6 +131,11 @@ final class ViewController: UIViewController {
     @objc func movieButtonClicked() {
         let vc = MovieMainViewController()
         vc.modalTransitionStyle = .flipHorizontal
+        present(vc, animated: true)
+    }
+    
+    @objc func pageButtonClicked() {
+        let vc = OnboardingViewController()
         present(vc, animated: true)
     }
     
@@ -169,7 +181,16 @@ final class ViewController: UIViewController {
             make.centerX.equalTo(view)
             make.height.equalTo(40)
         }
+        
+        pageButton.addTarget(self, action: #selector(pageButtonClicked), for: .touchUpInside)
+        view.addSubview(pageButton)
+        pageButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            pageButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 90),
+            pageButton.topAnchor.constraint(equalTo: signButton.topAnchor, constant: -80),
+            pageButton.heightAnchor.constraint(equalToConstant: 50),
+            pageButton.widthAnchor.constraint(equalToConstant: 300),
+        ])
     }
-
 }
-
