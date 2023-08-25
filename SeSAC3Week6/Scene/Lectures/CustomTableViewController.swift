@@ -41,11 +41,9 @@ class CustomTableViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        // UINib -> Xib
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "customCell")
+        tableView.delegate = self // delegate 프로토콜 연결
+        tableView.dataSource = self // datasource 프로토콜 연결
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "customCell") // UINib -> Xib
     }
 
 }
