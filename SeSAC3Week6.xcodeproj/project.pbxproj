@@ -31,6 +31,7 @@
 		38CCBBA62A9782EF006D4779 /* MovieCategoryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCBBA52A9782EF006D4779 /* MovieCategoryLabel.swift */; };
 		38CCBBAE2A97AA25006D4779 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCBBAD2A97AA25006D4779 /* UIImage+.swift */; };
 		38CCBBB02A97AA59006D4779 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CCBBAF2A97AA59006D4779 /* UIViewController+.swift */; };
+		38DEF3F02A99C03400E73464 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DEF3EF2A99C03400E73464 /* UIButton+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		38CCBBA52A9782EF006D4779 /* MovieCategoryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCategoryLabel.swift; sourceTree = "<group>"; };
 		38CCBBAD2A97AA25006D4779 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		38CCBBAF2A97AA59006D4779 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		38DEF3EF2A99C03400E73464 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		38CCBBAB2A97A9C6006D4779 /* UIView+ */ = {
 			isa = PBXGroup;
 			children = (
+				38DEF3EF2A99C03400E73464 /* UIButton+.swift */,
 				38CCBBAD2A97AA25006D4779 /* UIImage+.swift */,
 				38CCBBAF2A97AA59006D4779 /* UIViewController+.swift */,
 			);
@@ -272,6 +275,7 @@
 				38CCBBA42A977EA9006D4779 /* MovieMainViewController.swift in Sources */,
 				38CCBB962A971E98006D4779 /* BlackRadiusTextField.swift in Sources */,
 				38288E552A949F9200AED829 /* ExampleOneViewController.swift in Sources */,
+				38DEF3F02A99C03400E73464 /* UIButton+.swift in Sources */,
 				38CCBB982A972A26006D4779 /* CustomTableViewController.swift in Sources */,
 				387AF2582A930A180055C29C /* ViewController.swift in Sources */,
 				38288E502A94792B00AED829 /* LocationViewController.swift in Sources */,

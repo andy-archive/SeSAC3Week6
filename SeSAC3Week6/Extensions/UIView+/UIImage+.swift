@@ -8,11 +8,12 @@
 import UIKit
 
 extension UIImage {
+    
     func designCircleThumbnail() -> UIImage {
         let spacing: CGFloat = 12
         let screenWidth = (UIScreen.main.bounds.size.width - (spacing * 4)) / 3
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: screenWidth, height: screenWidth))
-        let renderedimage = renderer.image { context in
+        let renderedImage = renderer.image { context in
             context.cgContext.setFillColor(UIColor.systemBrown.cgColor)
             context.cgContext.setStrokeColor(UIColor.cyan.cgColor)
             context.cgContext.setLineWidth(5)
@@ -21,6 +22,6 @@ extension UIImage {
             context.cgContext.addEllipse(in: rectangle)
             context.cgContext.drawPath(using: .fillStroke)
         }
-        return renderedimage
+        return renderedImage
     }
 }

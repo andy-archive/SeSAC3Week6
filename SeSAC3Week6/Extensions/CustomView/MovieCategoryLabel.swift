@@ -21,7 +21,7 @@ final class MovieCategoryLabel: UILabel {
     
     func designLabel() {
         textColor = .white
-        font = .boldSystemFont(ofSize: 18)
+        font = .boldSystemFont(ofSize: 17)
         numberOfLines = 1
     }
 }
